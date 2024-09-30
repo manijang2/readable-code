@@ -25,6 +25,7 @@ public class MinesweeperGame {
 
         while (true) {
             showBoard();
+
             if (doesUserWinTheGame()) {
                 System.out.println("지뢰를 모두 찾았습니다. GAME CLEAR!");
                 break;
@@ -175,11 +176,13 @@ public class MinesweeperGame {
                 BOARD[row][col] = MinesweeperGame.CLOSED_CELL_SIGN;
             }
         }
+
         for (int i = 0; i < LAND_MINE_COUNT; i++) {
             int col = new Random().nextInt(BOARD_COL_SIZE);
             int row = new Random().nextInt(BOARD_ROW_SIZE);
             LAND_MINES[row][col] = true;
         }
+
         for (int row = 0; row < BOARD_ROW_SIZE; row++) {
             for (int col = 0; col < BOARD_COL_SIZE; col++) {
                 int count = 0;
@@ -235,9 +238,9 @@ public class MinesweeperGame {
         if (NEARBY_LAND_MINE_COUNTS[row][col] != 0) {
             BOARD[row][col] = String.valueOf(NEARBY_LAND_MINE_COUNTS[row][col]);
             return;
-        } else {
-            BOARD[row][col] = OPENED_CELL_SIGN;
         }
+        BOARD[row][col] = OPENED_CELL_SIGN;
+
         open(row - 1, col - 1);
         open(row - 1, col);
         open(row - 1, col + 1);
@@ -247,5 +250,4 @@ public class MinesweeperGame {
         open(row + 1, col);
         open(row + 1, col + 1);
     }
-
 }
