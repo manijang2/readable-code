@@ -4,8 +4,8 @@ public class NumberCell extends Cell {
 
     private final int nearbyLandMineCount;
 
-    public NumberCell(int count) {
-        this.nearbyLandMineCount = count;
+    public NumberCell(int nearbyLandMineCount) {
+        this.nearbyLandMineCount = nearbyLandMineCount;
     }
 
     @Override
@@ -28,4 +28,5 @@ public class NumberCell extends Cell {
         }
         return UNCHECKED_SIGN;
     }
+
 }

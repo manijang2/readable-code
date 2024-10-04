@@ -1,10 +1,8 @@
 package cleancode.minesweeper.tobe.cell;
 
-
 public class LandMineCell extends Cell {
 
-    private boolean isLandMine;
-    public static final String LAND_MINE_SIGN = "☼";
+    private static final String LAND_MINE_SIGN = "☼";
 
     @Override
     public boolean isLandMine() {
@@ -26,4 +24,5 @@ public class LandMineCell extends Cell {
         }
         return UNCHECKED_SIGN;
     }
+
 }
