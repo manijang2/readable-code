@@ -1,17 +1,17 @@
 package cleancode.minesweeper.tobe.cell;
 
-public class CellStatus {
+public class CellState {
 
     private boolean isFlagged;
     private boolean isOpened;
 
-    private CellStatus(boolean isFlagged, boolean isOpened) {
+    private CellState(boolean isFlagged, boolean isOpened) {
         this.isFlagged = isFlagged;
         this.isOpened = isOpened;
     }
 
-    public static CellStatus initialize() {
-        return new CellStatus(true, false);
+    public static CellState initialize() {
+        return new CellState(false, false);
     }
 
     public void flag() {
@@ -33,4 +33,5 @@ public class CellStatus {
     public boolean isFlagged() {
         return isFlagged;
     }
+
 }

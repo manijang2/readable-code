@@ -4,7 +4,7 @@ public class EmptyCell implements Cell {
 
     private static final String EMPTY_SIGN = "■";
 
-    private final CellStatus cellStatus = CellStatus.initialize();
+    private final CellState cellState = CellState.initialize();
 
     @Override
     public boolean isLandMine() {
@@ -18,10 +18,10 @@ public class EmptyCell implements Cell {
 
     @Override
     public String getSign() {
-        if (cellStatus.isOpened()) {
+        if (cellState.isOpened()) {
             return EMPTY_SIGN;
         }
-        if (cellStatus.isFlagged()) {
+        if (cellState.isFlagged()) {
             return FLAG_SIGN;
         }
         return UNCHECKED_SIGN;
@@ -29,21 +29,22 @@ public class EmptyCell implements Cell {
 
     @Override
     public void flag() {
-        cellStatus.flag();
+        cellState.flag();
     }
 
     @Override
     public void open() {
-        cellStatus.open();
+        cellState.open();
     }
 
     @Override
     public boolean isChecked() {
-        return cellStatus.isChecked();
+        return cellState.isChecked();
     }
 
     @Override
     public boolean isOpened() {
-        return cellStatus.isOpened();
+        return cellState.isOpened();
     }
+
 }
