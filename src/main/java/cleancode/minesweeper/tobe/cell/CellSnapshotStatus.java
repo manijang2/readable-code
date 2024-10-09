@@ -9,10 +9,10 @@ public enum CellSnapshotStatus {
     UNCHECKED("확인 전"),
     ;
 
-
     private final String description;
 
     CellSnapshotStatus(String description) {
         this.description = description;
     }
+
 }
