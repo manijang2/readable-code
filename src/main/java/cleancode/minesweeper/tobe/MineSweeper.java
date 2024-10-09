@@ -21,6 +21,12 @@ public class Minesweeper implements GameInitializable, GameRunnable {
         this.outputHandler = outputHandler;
     }
 
+    public Minesweeper(GameConfig gameConfig) {
+        gameBoard = new GameBoard(gameConfig.getGameLevel());
+        this.inputHandler = gameConfig.getInputHandler();
+        this.outputHandler = gameConfig.getOutputHandler();
+    }
+
     @Override
     public void initialize() {
         gameBoard.initializeGame();

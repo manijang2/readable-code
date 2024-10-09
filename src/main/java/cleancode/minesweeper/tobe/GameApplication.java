@@ -7,14 +7,25 @@ import cleancode.minesweeper.tobe.io.ConsoleOutputHandler;
 import cleancode.minesweeper.tobe.io.InputHandler;
 import cleancode.minesweeper.tobe.io.OutputHandler;
 
+import java.util.logging.Handler;
+
 public class GameApplication {
 
     public static void main(String[] args) {
+
+
+
         GameLevel gameLevel = new Beginner();
         InputHandler inputHandler = new ConsoleInputHandler();
         OutputHandler outputHandler = new ConsoleOutputHandler();
 
-        Minesweeper minesweeper = new Minesweeper(gameLevel, inputHandler, outputHandler);
+        GameConfig gameConfig = new GameConfig(
+                gameLevel,
+                inputHandler,
+                outputHandler
+        );
+
+        Minesweeper minesweeper = new Minesweeper(gameConfig);
         minesweeper.initialize();
         minesweeper.run();
     }
