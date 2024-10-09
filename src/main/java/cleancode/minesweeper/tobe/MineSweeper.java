@@ -80,11 +80,11 @@ public class Minesweeper implements GameInitializable, GameRunnable {
     }
 
     private boolean doesUserChooseToOpenCell(UserAction userAction) {
-        return userAction.equals(UserAction.OPEN);
+        return userAction == UserAction.OPEN;
     }
 
     private boolean doesUserChooseToPlantFlag(UserAction userAction) {
-        return userAction.equals(UserAction.FLAG);
+        return userAction == UserAction.FLAG;
     }
 
     private UserAction getUserActionInputFromUser() {
